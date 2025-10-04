@@ -1,6 +1,3 @@
-# Node
 node_modules/
-
-# Env
 .env
 .env.*
