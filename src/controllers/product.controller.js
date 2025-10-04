@@ -62,7 +62,6 @@ class ProductController {
     try {
       const productData = req.body;
 
-      // Validaciones básicas
       if (!productData.title || !productData.price || !productData.stock) {
         return res.status(400).json({ 
           status: 'error', 
@@ -70,7 +69,6 @@ class ProductController {
         });
       }
 
-      // Agregar el owner (admin que crea el producto)
       productData.owner = req.user._id;
 
       const newProduct = await ProductService.createProduct(productData);
